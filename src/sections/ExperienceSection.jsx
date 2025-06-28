@@ -23,10 +23,39 @@ const ExperienceSection = () => {
         }
       })
     })
+
+gsap.to('.timeline', {
+  transformOrigin: 'bottom bottom',
+  ease: 'power1.inOut',
+  scrollTrigger:{
+    trigger:'.timeline',
+    start: 'top center',
+    end: '70% center',
+    onUpdate:(self) =>{
+      gsap.to('.timeline', {
+        scaleY: 1 - self.progress
+      })
+    }
+  },
+})
+
+gsap.utils.toArray('.expText').forEach((text) => {
+      gsap.from(text, {
+        xPercent:0,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: text,
+          start: 'top 60%'
+        }
+      })
+    })
+
   }, [])
  
   return (
-    <section className='w-full md:mt-20 mt-20 section-padding xl:px-0 px-5'>
+    <section id='experience' className='w-full md:mt-20 mt-20 section-padding xl:px-0 px-5'>
       <div className="w-full h-full md:px-20 px-5">
         <TitleHeader title='Professional work Experience'
         sub='My Career Overview'/>
@@ -43,7 +72,7 @@ const ExperienceSection = () => {
                   </GlowCard>
                 </div>
 
-                <div className="xl:w-4/6 timeline-card">
+                <div className="xl:w-4/6 ">
                   <div className="flex items-start">
                     <div className='timeline-wrapper'>
                       <div className='timeline'/>
@@ -62,9 +91,9 @@ const ExperienceSection = () => {
                         <p className='text-[#839cb5] italic'>
                           Responsibolities
                         </p>
-                        <ul className='list-disc ms-5 mt-5 flex flex-col gap-5'>
-                          {card.responsibilities?.map((responsibility, i) => (
-                            <li key={i} className='text-lg'>
+                        <ul className='list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50'>
+                          {card.responsibilities.map((responsibility) => (
+                            <li key={responsibility} className='text-lg'>
                               {responsibility}
                             </li>
                           ))}
