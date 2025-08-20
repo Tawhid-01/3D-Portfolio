@@ -27,7 +27,7 @@ const TechStack = () => {
             <TitleHeader
 
             title="My Preferred Tech Stack"
-            sub="The Skill I Bring to the Table"
+            sub="🤝The Skill I Bring to the Table"
             />
 
             <div className="tech-grid">
