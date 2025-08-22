@@ -61,7 +61,7 @@ const Hero = () => {
                     <h1>that Deliver Results</h1>
                 </div>
                 <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-                    Hi, I’m Adrian, a developer based in Croatia with a passion for code.
+                    Hi, I’m Tawhid, a developer based in Croatia with a passion for code.
                 </p>
                   <Button
                   
