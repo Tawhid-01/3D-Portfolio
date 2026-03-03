@@ -193,7 +193,7 @@ section {
       }
 
       img {
-        @apply w-full h-full object-contain rounded-xl;
+        @apply w-full h-full object-cover rounded-xl;
       }
 
       h2 {
